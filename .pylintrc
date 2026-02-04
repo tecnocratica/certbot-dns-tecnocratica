@@ -1,0 +1,22 @@
+[MAIN]
+py-version = 3.9
+load-plugins =
+
+[MESSAGES CONTROL]
+disable =
+    missing-module-docstring,
+    too-few-public-methods,
+    duplicate-code
+
+[FORMAT]
+max-line-length = 120
+
+[DESIGN]
+max-args = 6
+max-locals = 15
+
+[SIMILARITIES]
+min-similarity-lines = 6
+
+[TYPECHECK]
+ignored-modules = certbot,certbot.plugins

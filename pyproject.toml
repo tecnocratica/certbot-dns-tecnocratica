@@ -1,0 +1,43 @@
+[build-system]
+requires = ["setuptools>=45"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "certbot-dns-tecnocratica"
+version = "0.1.0"
+description = "Tecnocratica (Neodigit/Virtualname) DNS Authenticator plugin for Certbot"
+readme = "README.md"
+license = "Apache-2.0"
+authors = [
+    { name = "Adrian Almenar", email = "adrian@tecnocratica.net" },
+]
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Plugins",
+    "Intended Audience :: System Administrators",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Security",
+    "Topic :: System :: Installation/Setup",
+    "Topic :: System :: Systems Administration",
+    "Topic :: Utilities",
+]
+dependencies = [
+    "certbot>=1.1.0",
+    "requests>=2.20.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/tecnocratica/certbot-dns-tecnocratica"
+Repository = "https://github.com/tecnocratica/certbot-dns-tecnocratica"
+Issues = "https://github.com/tecnocratica/certbot-dns-tecnocratica/issues"
+
+[project.entry-points."certbot.plugins"]
+dns-tecnocratica = "certbot_dns_tecnocratica.dns_tecnocratica:Authenticator"
