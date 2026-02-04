@@ -13,6 +13,7 @@ logger = logging.getLogger(__name__)
 
 __all__ = ['Authenticator']
 
+USER_AGENT = 'tecnocratica-certbot/0.1.0'
 DEFAULT_API_URL = 'https://api.neodigit.net/v1'
 DEFAULT_TIMEOUT = 30
 MAX_RETRIES = 3
@@ -81,6 +82,7 @@ class _TecnocraticaClient:
             'X-TCpanel-Token': api_token,
             'Accept': 'application/json',
             'Content-Type': 'application/json',
+            'User-Agent': USER_AGENT,
         })
         self.api_url = api_url.rstrip('/')
         self._zones: Optional[list[dict[str, Any]]] = None
