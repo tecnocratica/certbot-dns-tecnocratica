@@ -97,7 +97,8 @@ class _TecnocraticaClient:
             category = 'server error'
         else:
             category = 'request failed'
-        return f'Error {action}: {category} ({code} {resp.text})'
+        body = resp.text[:200] if resp.text else ''
+        return f'Error {action}: {category} ({code} {body})'
 
     def _request_with_retry(self, method: str, url: str,
                             **kwargs: Any) -> requests.Response:
